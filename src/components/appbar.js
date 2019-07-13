@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import AppBar from '../components/appbar';
-import Nav from '../components/nav';
 
 const drawerWidth = 240;
 const styles = theme => ({
@@ -33,39 +32,40 @@ const styles = theme => ({
         width: drawerWidth,
     },
     toolbar: theme.mixins.toolbar,
+
     content: {
         flexGrow: 1,
         backgroundColor: theme.palette.background.default,
         padding: theme.spacing.unit * 3,
     },
 });
-
-class Home extends Component {
+class PermanentDrawer extends React.Component {
+    state = {
+        anchor: 'left',
+    };
+    handleChange = event => {
+        this.setState({
+            anchor: event.target.value,
+        });
+    };
     render() {
         const { classes } = this.props;
+        const { anchor } = this.state;
         return (
-            <div className={classes.root}>
-               <div className={classes.appFrame}>
-                 <AppBar/>
-                 <Nav />
-                 <main className={classes.content}>
-                     <div className={classes.toolbar} />
-                     <Typography>{'Home'}</Typography>
-                 </main>
-               </div>
-            </div>
+            <AppBar
+                position="absolute"
+                className={classNames(classes.appBar, classes[`appBar-${anchor}`])}
+            >
+                <Toolbar>
+                    <Typography variant="title" color="inherit" noWrap>
+                        CRUD
+                  </Typography>
+                </Toolbar>
+            </AppBar>
         );
     }
 }
-
-Home.propTypes = {
+PermanentDrawer.propTypes = {
     classes: PropTypes.object.isRequired,
 };
-
-function mapStateToProps(state) {
-    return state;
-}
-const connectedHomePage = withRouter(connect(mapStateToProps, null, null, {
-    pure: false
-})(withStyles(styles)(Home)));
-export { connectedHomePage as Home };
+export default withStyles(styles)(PermanentDrawer);
