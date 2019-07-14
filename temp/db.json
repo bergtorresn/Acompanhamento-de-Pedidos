@@ -1,4 +1,4 @@
-/* 
+/*
   ORDER STATUS
    0 - NEW
    1 - IN PROGRESS
@@ -6,7 +6,6 @@
    3 - DONE
    4 - DELETED
 */
-
 {
   "orders": [
     {

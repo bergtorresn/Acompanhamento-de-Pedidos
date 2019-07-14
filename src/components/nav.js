@@ -67,6 +67,12 @@ class Navigation extends React.Component {
                         </ListItemIcon>
                         <ListItemText primary="Acompanhar" />
                     </ListItem>
+                    <ListItem button component='a' href="/all-orders">
+                        <ListItemIcon>
+                            <VendorIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Todos os Pedidos" />
+                    </ListItem>
                 </List>
                 <Divider />
             </Drawer>
