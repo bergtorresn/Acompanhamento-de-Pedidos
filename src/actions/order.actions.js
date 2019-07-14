@@ -1,4 +1,4 @@
-import { userService } from '../services/';
+import { requests } from '../services/';
 
 export const orderAction = {
     getOrders
@@ -6,11 +6,12 @@ export const orderAction = {
 function getOrders() {
     return dispatch => {
         let apiEndpoint = 'orders';
-        userService.get(apiEndpoint)
+        requests.get(apiEndpoint)
             .then((response) => {
-                dispatch(changeOrdersList(response.data.data));
+                console.log(response.data);
+                dispatch(changeOrdersList(response.data));
             }).catch((err) => {
-                console.log(err);
+                console.log('***** ERROR ' + err);
             })
     };
 }

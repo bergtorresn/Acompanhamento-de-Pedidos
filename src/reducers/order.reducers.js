@@ -1,6 +1,6 @@
 const initialState = {
     anchor: 'left',
-    vendor: [],
+    order: [],
     open: false,
     id: '',
     customerName: '',

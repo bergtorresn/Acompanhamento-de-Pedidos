@@ -1,7 +1,7 @@
 import axios from 'axios';
 import config from '../config/config';
 
-export const userService = {
+export const requests = {
     get,
     post,
     put,
