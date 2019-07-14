@@ -70,30 +70,30 @@ function onChangeProps(props, event) {
     }
 }
 
-function editOrderStatus(payload) {
-    console.log('***** orderstatus ' + payload.orderstatus);
+function editOrderStatus(payload, deleted) {
 
-    if (payload.orderstatus === 0) {
-        payload.orderstatus = 1
-    } else if (payload.orderstatus === 1) {
-        payload.orderstatus = 2
-    } else if (payload.orderstatus === 2) {
-        payload.orderstatus = 3
-    } else {
+    if (deleted) {
         payload.orderstatus = 4
+    } else {
+        if (payload.orderstatus === 0) {
+            payload.orderstatus = 1
+        } else if (payload.orderstatus === 1) {
+            payload.orderstatus = 2
+        } else if (payload.orderstatus === 2) {
+            payload.orderstatus = 3
+        }
     }
-    console.log('***** orderstatus ' + payload.orderstatus);
 
     return dispatch => {
         let apiEndpoint = 'orders/' + payload.id;
 
         requests.put(apiEndpoint, payload)
-        .then((response) => {
-            dispatch(updateOrdersDetails());
-            dispatch(orderAction.getOrders());
-        }).catch((err) => {
-            console.log('***** ERROR ' + err);
-        })
+            .then((response) => {
+                dispatch(updateOrdersDetails());
+                dispatch(orderAction.getOrders());
+            }).catch((err) => {
+                console.log('***** ERROR ' + err);
+            })
     };
 }
 
