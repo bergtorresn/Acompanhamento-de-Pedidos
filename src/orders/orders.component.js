@@ -14,6 +14,9 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { withRouter } from 'react-router-dom';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/SkipNext';
 
 const drawerWidth = 240;
 const styles = theme => ({
@@ -107,6 +110,8 @@ class Orders extends Component {
                                             <TableCell>Nome do Cliente</TableCell>
                                             <TableCell>Status do pedido</TableCell>
                                             <TableCell>Detalhes do pedido</TableCell>
+                                            <TableCell>Próximo Status</TableCell>
+                                            <TableCell>Excluir</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
@@ -123,6 +128,16 @@ class Orders extends Component {
                                                         <TableCell component="th" scope="row">
                                                             {n.orderDescription}
                                                         </TableCell>
+                                                        <TableCell>
+                                                            <IconButton className={classes.button} aria-label="Edit" component='a' href={`/edit-vendor/${n._id}`}>
+                                                                <EditIcon />
+                                                            </IconButton>
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            <IconButton className={classes.button} aria-label="Delete" onClick={(event) => this.handleClick(event, n._id)}>
+                                                                <DeleteIcon />
+                                                            </IconButton>
+                                                        </TableCell>
                                                     </TableRow>
                                                 );
                                             } else if (n.orderstatus === 1) {
@@ -136,6 +151,16 @@ class Orders extends Component {
                                                         </TableCell>
                                                         <TableCell component="th" scope="row">
                                                             {n.orderDescription}
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            <IconButton className={classes.button} aria-label="Edit" component='a' href={`/edit-vendor/${n._id}`}>
+                                                                <EditIcon />
+                                                            </IconButton>
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            <IconButton className={classes.button} aria-label="Delete" onClick={(event) => this.handleClick(event, n._id)}>
+                                                                <DeleteIcon />
+                                                            </IconButton>
                                                         </TableCell>
                                                     </TableRow>
                                                 );
@@ -151,6 +176,16 @@ class Orders extends Component {
                                                         <TableCell component="th" scope="row">
                                                             {n.orderDescription}
                                                         </TableCell>
+                                                        <TableCell>
+                                                            <IconButton className={classes.button} aria-label="Edit" component='a' href={`/edit-vendor/${n._id}`}>
+                                                                <EditIcon />
+                                                            </IconButton>
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            <IconButton className={classes.button} aria-label="Delete" onClick={(event) => this.handleClick(event, n._id)}>
+                                                                <DeleteIcon />
+                                                            </IconButton>
+                                                        </TableCell>
                                                     </TableRow>
                                                 );
                                             } else if (n.orderstatus === 3) {
@@ -164,6 +199,13 @@ class Orders extends Component {
                                                         </TableCell>
                                                         <TableCell component="th" scope="row">
                                                             {n.orderDescription}
+                                                        </TableCell>
+                                                        <TableCell>
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            <IconButton className={classes.button} aria-label="Delete" onClick={(event) => this.handleClick(event, n._id)}>
+                                                                <DeleteIcon />
+                                                            </IconButton>
                                                         </TableCell>
                                                     </TableRow>
                                                 );
