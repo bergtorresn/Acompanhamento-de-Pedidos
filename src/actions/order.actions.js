@@ -1,4 +1,5 @@
 import { requests } from '../services/';
+import { history } from '../helpers';
 
 export const orderAction = {
     createOrder,
@@ -28,6 +29,7 @@ function createOrder(payload) {
         requests.post(apiEndpoint, payload)
             .then((response) => {
                 dispatch(createUserInfo());
+                history.push('/orders')
             })
     }
 }
