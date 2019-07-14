@@ -26,7 +26,7 @@ function put(apiEndpoint, payload) {
     })
 }
 
-function deleteDetail(apiEndpoint) {
+function remove(apiEndpoint) {
     return axios.delete(baseUrl + apiEndpoint).then((response) => {
         return response;
     }).catch((err) => {
@@ -38,5 +38,5 @@ export const requests = {
     get,
     post,
     put,
-    deleteDetail
+    remove
 };

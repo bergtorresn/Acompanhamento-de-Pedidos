@@ -61,7 +61,7 @@ function editOrderInfo(id, payload) {
 function deleteOrderById(id) {
     return dispatch => {
         let apiEndpoint = 'orders/' + id;
-        requests.deleteDetail(apiEndpoint)
+        requests.remove(apiEndpoint)
             .then((response) => {
                 dispatch(deleteOrdersDetails());
                 dispatch(orderAction.getOrders());

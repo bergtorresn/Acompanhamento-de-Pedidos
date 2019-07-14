@@ -72,8 +72,10 @@ class AddOrder extends Component {
             orderstatus: this.props.order.orderstatus,
         }
         if(params.id){
+            console.log("***** EDIT");
             dispatch(orderAction.editOrderInfo(params.id, payload));
         }else{
+            console.log("***** CREATE");
             dispatch(orderAction.createOrder(payload));
         }
     }
@@ -158,7 +160,7 @@ class AddOrder extends Component {
                                    <Grid item xs={3} container justify="center">
                                       <Grid container spacing={24}>
                                          <Grid item xs={6} container justify="center">
-                                            <Button variant="contained" color="secondary" className={classes.button} component='a' href="/vendor">Cancel</Button>
+                                            <Button variant="contained" color="secondary" className={classes.button} component='a' href="/orders">Cancel</Button>
                                          </Grid>
                                          <Grid item xs={6} container justify="flex-start">
                                             <Button variant="contained" color="primary" className={classes.button} onClick={(event) => this.handleClick(event)}>Save</Button>
