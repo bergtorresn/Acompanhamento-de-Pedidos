@@ -7,7 +7,6 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import HomeIcon from '@material-ui/icons/Home';
 import VendorIcon from '@material-ui/icons/CardTravel';
 
 const drawerWidth = 240;
@@ -62,12 +61,6 @@ class Navigation extends React.Component {
                 anchor={anchor}
             >
                 <List component="nav">
-                    <ListItem button component='a' href="/home">
-                        <ListItemIcon>
-                            <HomeIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Home" />
-                    </ListItem>
                     <ListItem button component='a' href="/orders">
                         <ListItemIcon>
                             <VendorIcon />
