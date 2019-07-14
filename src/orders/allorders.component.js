@@ -58,20 +58,16 @@ const styles = theme => ({
 });
 
 
-class Orders extends Component {
+class AllOrders extends Component {
 
     componentDidMount() {
         const { dispatch } = this.props;
         dispatch(orderAction.getOrders());
-    }
+    }    
     handleChange = event => {
         this.setState({
             anchor: event.target.value,
         });
-    };
-    handleClick = (event, id) => {
-        const { dispatch } = this.props;
-        dispatch(orderAction.deleteOrderById(id))
     };
 
     render() {
@@ -86,7 +82,7 @@ class Orders extends Component {
                         <div className={classes.toolbar} />
                         <Grid container spacing={24}>
                             <Grid item xs={3}>
-                                <Typography>{'PEDIDOS'}</Typography>
+                                <Typography>{'TODO OS PEDIDOS'}</Typography>
                             </Grid>
                             <Grid item xs={6}>
                             </Grid>
@@ -99,66 +95,38 @@ class Orders extends Component {
                             <Grid item xs={6}>
                             </Grid>
                             <Grid item xs={3} container justify="flex-end">
-                                <Button variant="contained" color="primary" className={classes.button} component='a' href="/add-order">Adicionar Pedido</Button>
                             </Grid>
                         </Grid>
                         <br /><br />
                         <Grid container spacing={24}>
                             <Paper className={classes.root}>
                                 <Table className={classes.table}>
-                                    <TableHead>
-                                        <TableRow>
-                                            <TableCell>Nome do Cliente</TableCell>
-                                            <TableCell>Status do pedido</TableCell>
-                                        </TableRow>
-                                    </TableHead>
                                     <TableBody>
-                                        {order.map(n => {
-                                            if (n.orderstatus === 0) {
-                                                return (
+                                        {order.map(n => { if(n.orderstatus === 0){
+                                                  return (
+                                                
                                                     <TableRow key={n.id}>
                                                         <TableCell component="th" scope="row">
-                                                            {n.customerName}
+                                                        {n.customerName}
                                                         </TableCell>
                                                         <TableCell>
-                                                            NOVO
+                                                            {n.AllOrderstatus}
                                                         </TableCell>
                                                     </TableRow>
-                                                );
-                                            } else if (n.orderstatus === 1) {
-                                                return (
-                                                    <TableRow key={n.id}>
-                                                        <TableCell component="th" scope="row">
-                                                            {n.customerName}
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            EM PREPARAÇÃO
-                                                        </TableCell>
-                                                    </TableRow>
-                                                );
-                                            } else if (n.orderstatus === 2) {
-                                                return (
-                                                    <TableRow key={n.id}>
-                                                        <TableCell component="th" scope="row">
-                                                            {n.customerName}
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            PRONTO PARA PAGAMENTO
-                                                        </TableCell>
-                                                    </TableRow>
-                                                );
-                                            } else if (n.orderstatus === 3) {
-                                                return (
-                                                    <TableRow key={n.id}>
-                                                        <TableCell component="th" scope="row">
-                                                            {n.customerName}
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            CONCLUÍDO
-                                                        </TableCell>
-                                                    </TableRow>
-                                                );
-                                            }
+                                                );   
+                                                } else {
+                                                    return (
+                                                
+                                                        <TableRow key={n.id}>
+                                                            <TableCell component="th" scope="row">
+                                                                {n.customerName}
+                                                            </TableCell>
+                                                            <TableCell>
+                                                                {n.AllOrderstatus}
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    );
+                                                }
                                         })}
                                     </TableBody>
                                 </Table>
@@ -171,7 +139,7 @@ class Orders extends Component {
     }
 }
 
-Orders.propTypes = {
+AllOrders.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
@@ -181,9 +149,9 @@ const mapStateToProps = (state) => {
     };
 }
 
-const connectedOrdersPage = withRouter(connect(mapStateToProps, null, null, {
+const connectedAllOrdersPage = withRouter(connect(mapStateToProps, null, null, {
     pure: false
 
-})(withStyles(styles)(Orders)));
+})(withStyles(styles)(AllOrders)));
 
-export { connectedOrdersPage as Orders };
+export { connectedAllOrdersPage as AllOrders };

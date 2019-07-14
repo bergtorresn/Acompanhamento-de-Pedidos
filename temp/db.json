@@ -1,3 +1,12 @@
+/* 
+  ORDER STATUS
+   0 - NEW
+   1 - IN PROGRESS
+   2 - READY TO PAY
+   3 - DONE
+   4 - DELETED
+*/
+
 {
   "orders": [
     {
@@ -36,24 +45,11 @@
       "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
     },
     {
-      "customerName": "Rosemberg",
+      "customerName": "Aline",
       "customerCPF": "05097166361",
       "orderstatus": 0,
+      "orderDescription": "Criando um novo pedido",
       "id": 6
-    },
-    {
-      "customerName": "qqwdwq",
-      "customerCPF": "123123",
-      "orderstatus": 0,
-      "orderDescription": "test3jopsidjaois",
-      "id": 7
-    },
-    {
-      "customerName": "dasd",
-      "customerCPF": "123123",
-      "orderstatus": 0,
-      "orderDescription": "asdasda",
-      "id": 8
     }
   ]
 }

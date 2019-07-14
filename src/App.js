@@ -3,6 +3,7 @@ import './App.css';
 import { Router, Switch, Route } from 'react-router-dom';
 import { history } from './helpers';
 import { Orders } from './orders/orders.component';
+import { AllOrders } from './orders/allorders.component';
 import { AddOrder } from './orders/addorder.component';
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
           <div>
             <Switch>
               <Route exact path='/orders' component={Orders} />
+              <Route exact path='/all-orders' component={AllOrders} />
               <Route exact path='/add-order' component={AddOrder} />
             </Switch>
           </div>
