@@ -69,7 +69,9 @@ class AddOrder extends Component {
         const { dispatch } = this.props;
         let payload={
             customerName: this.props.order.customerName,
-            orderstatus: this.props.order.orderstatus,
+            customerCPF: this.props.order.customerCPF,
+            orderstatus: 0,
+            orderDescription: this.props.order.orderDescription
         }
         if(params.id){
             console.log("***** EDIT");
@@ -143,7 +145,6 @@ class AddOrder extends Component {
                                        id="description"
                                        label="Descrição"
                                        multiline
-                                       rowsMax="4"
                                        className={classes.textField}
                                        value={this.props.order.orderDescription}
                                        onChange={this.handleChange('orderDescription')}

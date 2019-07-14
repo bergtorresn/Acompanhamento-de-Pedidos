@@ -15,7 +15,6 @@ function getOrders() {
         let apiEndpoint = 'orders';
         requests.get(apiEndpoint)
             .then((response) => {
-                console.log(response.data);
                 dispatch(changeOrdersList(response.data));
             }).catch((err) => {
                 console.log('***** ERROR ' + err);
@@ -30,8 +29,10 @@ function createOrder(payload) {
             .then((response) => {
                 dispatch(createUserInfo());
                 history.push('/orders')
+            }).catch((err) => {
+                console.log('***** ERROR ' + err);
             })
-    }
+    };
 }
 
 function getOrderById(id) {
@@ -40,6 +41,8 @@ function getOrderById(id) {
         requests.get(apiEndpoint)
             .then((response) => {
                 dispatch(editOrderDetails(response.data));
+            }).catch((err) => {
+                console.log('***** ERROR ' + err);
             })
     };
 }
@@ -56,8 +59,10 @@ function editOrderInfo(id, payload) {
         requests.put(apiEndpoint, payload)
             .then((response) => {
                 dispatch(updatedUserInfo());
+            }).catch((err) => {
+                console.log('***** ERROR ' + err);
             })
-    }
+    };
 }
 
 function deleteOrderById(id) {
@@ -67,6 +72,8 @@ function deleteOrderById(id) {
             .then((response) => {
                 dispatch(deleteOrdersDetails());
                 dispatch(orderAction.getOrders());
+            }).catch((err) => {
+                console.log('***** ERROR ' + err);
             })
     };
 }

@@ -5,6 +5,7 @@ const initialState = {
     id: '',
     customerName: '',
     customerCPF: '',
+    orderstatus: '',
     orderDescription: ''
 };
 
