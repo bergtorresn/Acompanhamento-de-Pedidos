@@ -24,7 +24,7 @@ function getOrders() {
 
 function createOrder(payload) {
     return dispatch => {
-        let apiEndpoint = 'order/';
+        let apiEndpoint = 'orders';
         requests.post(apiEndpoint, payload)
             .then((response) => {
                 dispatch(createUserInfo());
