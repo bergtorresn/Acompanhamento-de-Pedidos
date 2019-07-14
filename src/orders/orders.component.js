@@ -135,14 +135,17 @@ class Orders extends Component {
         );
     }
 }
+
 Orders.propTypes = {
     classes: PropTypes.object.isRequired,
 };
+
 const mapStateToProps = (state) => {
     return {
         order: state.order
     };
 }
+
 const connectedOrdersPage = withRouter(connect(mapStateToProps, null, null, {
     pure: false
 

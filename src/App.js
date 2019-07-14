@@ -4,6 +4,7 @@ import { Router, Switch, Route } from 'react-router-dom';
 import { Home } from './home/';
 import { history } from './helpers';
 import { Orders } from './orders/orders.component';
+import { AddOrder } from './orders/addorder.component';
 
 class App extends Component {
   render() {
@@ -14,7 +15,7 @@ class App extends Component {
             <Switch>
               <Route exact path='/home' component={Home} />
               <Route exact path='/orders' component={Orders} />
-
+              <Route exact path='/add-order' component={AddOrder} />
             </Switch>
           </div>
         </Router>
