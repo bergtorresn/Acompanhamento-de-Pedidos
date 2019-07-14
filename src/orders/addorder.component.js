@@ -52,13 +52,6 @@ const styles = theme => ({
 
 class AddOrder extends Component {
 
-    componentDidMount() {
-        const { match : { params } } = this.props;
-        if(params.id){
-            const { dispatch } = this.props;
-            dispatch(orderAction.getOrderById(params.id));
-        }
-    }
     handleChange = prop => event => {
         const { dispatch } = this.props;
         dispatch(orderAction.onChangeProps(prop, event));

@@ -64,9 +64,9 @@ class Orders extends Component {
         const { dispatch } = this.props;
         dispatch(orderAction.getOrders());
     }
-    handleEditClick = (event, id) => {
-        const { dispatch } = this.props;
-        dispatch(orderAction.editOrderStatus(id))
+    handleEditClick = (event, obj) => {
+        const { dispatch } = this.props;    
+        dispatch(orderAction.editOrderStatus(obj))
     };
 
     handleDeleteClick = (event, id) => {
@@ -130,7 +130,7 @@ class Orders extends Component {
                                                         </TableCell>
                                                         <TableCell>
                                                             <IconButton className={classes.button} aria-label="Edit" 
-                                                            onClick={(event) => this.handleEditClick(event, n.id)}>
+                                                            onClick={(event) => this.handleEditClick(event, n)}>
                                                                 <EditIcon />
                                                             </IconButton>
                                                         </TableCell>
@@ -156,8 +156,8 @@ class Orders extends Component {
                                                         </TableCell>
                                                         <TableCell>
                                                             <IconButton className={classes.button} aria-label="Edit" 
-                                                            onClick={(event) => this.handleEditClick(event, n.id)}>
-                                                                <EditIcon />
+                                                            onClick={(event) => this.handleEditClick(event, n)}>
+                                                            <EditIcon />
                                                             </IconButton>
                                                         </TableCell>
                                                         <TableCell>
@@ -182,8 +182,8 @@ class Orders extends Component {
                                                         </TableCell>
                                                         <TableCell>
                                                             <IconButton className={classes.button} aria-label="Edit" 
-                                                            onClick={(event) => this.handleEditClick(event, n.id)}>
-                                                                <EditIcon />
+                                                            onClick={(event) => this.handleEditClick(event, n)}>
+                                                            <EditIcon />
                                                             </IconButton>
                                                         </TableCell>
                                                         <TableCell>

@@ -56,8 +56,8 @@ function getOrderById(id) {
         let apiEndpoint = 'orders/' + id;
         requests.get(apiEndpoint)
             .then((response) => {
-                dispatch(editOrderDetails(response.data));
-                console.log('***** RESPONSE ' + editOrderDetails(response.data))
+                dispatch(setOrderDetails(response.data));
+                console.log('***** GETED BY ID')
             }).catch((err) => {
                 console.log('***** ERROR ' + err);
             })
@@ -70,22 +70,23 @@ function onChangeProps(props, event) {
     }
 }
 
-function editOrderStatus(id) {
-
-    let payload = getOrderById(id)
+function editOrderStatus(payload) {
+    console.log('***** orderstatus ' + payload.orderstatus);
 
     if (payload.orderstatus === 0) {
         payload.orderstatus = 1
-    } else if (payload.orderstatus === 0) {
+    } else if (payload.orderstatus === 1) {
         payload.orderstatus = 2
-    } else if (payload.orderstatus === 0) {
+    } else if (payload.orderstatus === 2) {
         payload.orderstatus = 3
     } else {
         payload.orderstatus = 4
     }
+    console.log('***** orderstatus ' + payload.orderstatus);
 
     return dispatch => {
-        let apiEndpoint = 'orders/' + id;
+        let apiEndpoint = 'orders/' + payload.id;
+
         requests.put(apiEndpoint, payload)
         .then((response) => {
             dispatch(updateOrdersDetails());
@@ -111,7 +112,7 @@ export function handleOnChangeProps(props, value) {
         value: value
     }
 }
-export function editOrderDetails(order) {
+export function setOrderDetails(order) {
     return {
         type: "ORDER_DETAIL",
         id: order.id,
