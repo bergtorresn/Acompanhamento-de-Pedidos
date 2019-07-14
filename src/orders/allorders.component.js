@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import AppBar from '../components/appbar';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import Nav from '../components/nav';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -13,7 +12,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 import { withRouter } from 'react-router-dom';
 
 
@@ -63,7 +61,7 @@ class AllOrders extends Component {
     componentDidMount() {
         const { dispatch } = this.props;
         dispatch(orderAction.getOrders());
-    }    
+    }
     handleChange = event => {
         this.setState({
             anchor: event.target.value,
@@ -81,52 +79,35 @@ class AllOrders extends Component {
                     <main className={classes.content}>
                         <div className={classes.toolbar} />
                         <Grid container spacing={24}>
-                            <Grid item xs={3}>
-                                <Typography>{'TODO OS PEDIDOS'}</Typography>
-                            </Grid>
-                            <Grid item xs={6}>
-                            </Grid>
-                            <Grid item xs={3} container justify="flex-end">
-                            </Grid>
-                        </Grid>
-                        <Grid container spacing={24}>
-                            <Grid item xs={3}>
-                            </Grid>
-                            <Grid item xs={6}>
-                            </Grid>
-                            <Grid item xs={3} container justify="flex-end">
-                            </Grid>
-                        </Grid>
-                        <br /><br />
-                        <Grid container spacing={24}>
                             <Paper className={classes.root}>
                                 <Table className={classes.table}>
                                     <TableBody>
-                                        {order.map(n => { if(n.orderstatus === 0){
-                                                  return (
-                                                
+                                        {order.map(n => {
+                                            if (n.orderstatus === 0) {
+                                                return (
+
                                                     <TableRow key={n.id}>
                                                         <TableCell component="th" scope="row">
-                                                        {n.customerName}
+                                                            {n.customerName}
                                                         </TableCell>
                                                         <TableCell>
                                                             {n.AllOrderstatus}
                                                         </TableCell>
                                                     </TableRow>
-                                                );   
-                                                } else {
-                                                    return (
-                                                
-                                                        <TableRow key={n.id}>
-                                                            <TableCell component="th" scope="row">
-                                                                {n.customerName}
-                                                            </TableCell>
-                                                            <TableCell>
-                                                                {n.AllOrderstatus}
-                                                            </TableCell>
-                                                        </TableRow>
-                                                    );
-                                                }
+                                                );
+                                            } else {
+                                                return (
+
+                                                    <TableRow key={n.id}>
+                                                        <TableCell component="th" scope="row">
+                                                            {n.customerName}
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            {n.AllOrderstatus}
+                                                        </TableCell>
+                                                    </TableRow>
+                                                );
+                                            }
                                         })}
                                     </TableBody>
                                 </Table>
