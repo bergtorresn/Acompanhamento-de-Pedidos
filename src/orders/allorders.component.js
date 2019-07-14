@@ -71,6 +71,36 @@ class AllOrders extends Component {
     render() {
         const { classes } = this.props;
         const { order } = this.props.order;
+        var countNewOrder = 0;
+        var countOrdersInProgress = 0;
+        var countOrdersReadyToPay = 0;
+        var countOrdersDone = 0;
+
+        order.map(function (obj) {
+            if (obj.orderstatus === 0) {
+                countNewOrder++;
+            }
+        });
+
+        order.map(function (obj) {
+            var count = 0;
+            if (obj.orderstatus === 1) {
+                countOrdersInProgress++;
+            }
+        });
+
+        order.map(function (obj) {
+            if (obj.orderstatus === 2) {
+                countOrdersReadyToPay++;
+            }
+        });
+
+        order.map(function (obj) {
+            if (obj.orderstatus === 3) {
+                countOrdersDone++;
+            }
+        });
+
         return (
             <div className={classes.root}>
                 <div className={classes.appFrame}>
@@ -81,34 +111,45 @@ class AllOrders extends Component {
                         <Grid container spacing={24}>
                             <Paper className={classes.root}>
                                 <Table className={classes.table}>
+                                    <TableHead>
+                                        <TableRow>
+                                            <TableCell>Status</TableCell>
+                                            <TableCell>Quantidade</TableCell>
+                                        </TableRow>
+                                    </TableHead>
                                     <TableBody>
-                                        {order.map(n => {
-                                            if (n.orderstatus === 0) {
-                                                return (
-
-                                                    <TableRow key={n.id}>
-                                                        <TableCell component="th" scope="row">
-                                                            {n.customerName}
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            {n.AllOrderstatus}
-                                                        </TableCell>
-                                                    </TableRow>
-                                                );
-                                            } else {
-                                                return (
-
-                                                    <TableRow key={n.id}>
-                                                        <TableCell component="th" scope="row">
-                                                            {n.customerName}
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            {n.AllOrderstatus}
-                                                        </TableCell>
-                                                    </TableRow>
-                                                );
-                                            }
-                                        })}
+                                        <TableRow>
+                                            <TableCell component="th" scope="row">
+                                                NOVO
+                                            </TableCell>
+                                            <TableCell component="th" scope="row">
+                                                {countNewOrder}
+                                            </TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell component="th" scope="row">
+                                                EM PREPARAÇÃO
+                                            </TableCell>
+                                            <TableCell component="th" scope="row">
+                                                {countOrdersInProgress}
+                                            </TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell component="th" scope="row">
+                                                PRONTOS PARA PAGAMENTO
+                                            </TableCell>
+                                            <TableCell component="th" scope="row">
+                                                {countOrdersReadyToPay}
+                                            </TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell component="th" scope="row">
+                                                CONCLUÍDOS
+                                            </TableCell>
+                                            <TableCell component="th" scope="row">
+                                                {countOrdersDone}
+                                            </TableCell>
+                                        </TableRow>
                                     </TableBody>
                                 </Table>
                             </Paper>

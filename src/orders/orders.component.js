@@ -64,12 +64,12 @@ class Orders extends Component {
         const { dispatch } = this.props;
         dispatch(orderAction.getOrders());
     }
-    handleChange = event => {
-        this.setState({
-            anchor: event.target.value,
-        });
+    handleEditClick = (event, id) => {
+        const { dispatch } = this.props;
+        dispatch(orderAction.editOrderStatus(id))
     };
-    handleClick = (event, id) => {
+
+    handleDeleteClick = (event, id) => {
         const { dispatch } = this.props;
         dispatch(orderAction.deleteOrderById(id))
     };
@@ -122,19 +122,21 @@ class Orders extends Component {
                                                         <TableCell component="th" scope="row">
                                                             {n.customerName}
                                                         </TableCell>
-                                                        <TableCell>
+                                                        <TableCell component="th" scope="row">
                                                             NOVO
                                                         </TableCell>
                                                         <TableCell component="th" scope="row">
                                                             {n.orderDescription}
                                                         </TableCell>
                                                         <TableCell>
-                                                            <IconButton className={classes.button} aria-label="Edit" component='a' href={`/edit-vendor/${n._id}`}>
+                                                            <IconButton className={classes.button} aria-label="Edit" 
+                                                            onClick={(event) => this.handleEditClick(event, n.id)}>
                                                                 <EditIcon />
                                                             </IconButton>
                                                         </TableCell>
                                                         <TableCell>
-                                                            <IconButton className={classes.button} aria-label="Delete" onClick={(event) => this.handleClick(event, n._id)}>
+                                                            <IconButton className={classes.button} aria-label="Delete" 
+                                                            onClick={(event) => this.handleDeleteClick(event, n.id)}>
                                                                 <DeleteIcon />
                                                             </IconButton>
                                                         </TableCell>
@@ -153,12 +155,14 @@ class Orders extends Component {
                                                             {n.orderDescription}
                                                         </TableCell>
                                                         <TableCell>
-                                                            <IconButton className={classes.button} aria-label="Edit" component='a' href={`/edit-vendor/${n._id}`}>
+                                                            <IconButton className={classes.button} aria-label="Edit" 
+                                                            onClick={(event) => this.handleEditClick(event, n.id)}>
                                                                 <EditIcon />
                                                             </IconButton>
                                                         </TableCell>
                                                         <TableCell>
-                                                            <IconButton className={classes.button} aria-label="Delete" onClick={(event) => this.handleClick(event, n._id)}>
+                                                            <IconButton className={classes.button} aria-label="Delete" 
+                                                            onClick={(event) => this.handleDeleteClick(event, n.id)}>
                                                                 <DeleteIcon />
                                                             </IconButton>
                                                         </TableCell>
@@ -177,12 +181,14 @@ class Orders extends Component {
                                                             {n.orderDescription}
                                                         </TableCell>
                                                         <TableCell>
-                                                            <IconButton className={classes.button} aria-label="Edit" component='a' href={`/edit-vendor/${n._id}`}>
+                                                            <IconButton className={classes.button} aria-label="Edit" 
+                                                            onClick={(event) => this.handleEditClick(event, n.id)}>
                                                                 <EditIcon />
                                                             </IconButton>
                                                         </TableCell>
                                                         <TableCell>
-                                                            <IconButton className={classes.button} aria-label="Delete" onClick={(event) => this.handleClick(event, n._id)}>
+                                                            <IconButton className={classes.button} aria-label="Delete" 
+                                                            onClick={(event) => this.handleDeleteClick(event, n.id)}>
                                                                 <DeleteIcon />
                                                             </IconButton>
                                                         </TableCell>
@@ -203,7 +209,8 @@ class Orders extends Component {
                                                         <TableCell>
                                                         </TableCell>
                                                         <TableCell>
-                                                            <IconButton className={classes.button} aria-label="Delete" onClick={(event) => this.handleClick(event, n._id)}>
+                                                            <IconButton className={classes.button} aria-label="Delete" 
+                                                            onClick={(event) => this.handleDeleteClick(event, n.id)}>
                                                                 <DeleteIcon />
                                                             </IconButton>
                                                         </TableCell>

@@ -1,54 +1,46 @@
-/*
-  ORDER STATUS
-   0 - NEW
-   1 - IN PROGRESS
-   2 - READY TO PAY
-   3 - DONE
-   4 - DELETED
-*/
 {
   "orders": [
-    {
-      "id": 1,
-      "customerName": "Carlos",
-      "customerCPF": 12312312312,
-      "orderstatus": 0,
-      "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      {
+          "id": 1,
+          "customerName": "Carlos",
+          "customerCPF": 12312312312,
+          "orderstatus": 0,
+          "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      },
+      {
+          "id": 2,
+          "customerName": "Ana",
+          "customerCPF": 12312312312,
+          "orderstatus": 1,
+          "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      },
+      {
+          "id": 3,
+          "customerName": "Berg",
+          "customerCPF": 12312312312,
+          "orderstatus": 2,
+          "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      },
+      {
+          "id": 4,
+          "customerName": "Maria",
+          "customerCPF": 12312312312,
+          "orderstatus": 3,
+          "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      },
+      {
+        "id": 5,
+        "customerName": "Carla",
+        "customerCPF": 12312312312,
+        "orderstatus": 3,
+        "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     },
-    {
-      "id": 2,
-      "customerName": "Ana",
-      "customerCPF": 12312312312,
-      "orderstatus": 1,
-      "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    },
-    {
-      "id": 3,
-      "customerName": "Berg",
-      "customerCPF": 12312312312,
-      "orderstatus": 2,
-      "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    },
-    {
-      "id": 4,
-      "customerName": "Maria",
-      "customerCPF": 12312312312,
-      "orderstatus": 3,
-      "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    },
-    {
-      "id": 5,
-      "customerName": "Chaves",
-      "customerCPF": 12312312312,
-      "orderstatus": 4,
-      "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    },
-    {
-      "customerName": "Aline",
-      "customerCPF": "11111111111",
-      "orderstatus": 0,
-      "orderDescription": "Criando um novo pedido",
-      "id": 6
-    }
+      {
+          "id": 6,
+          "customerName": "Chaves",
+          "customerCPF": 12312312312,
+          "orderstatus": 4,
+          "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      }
   ]
 }

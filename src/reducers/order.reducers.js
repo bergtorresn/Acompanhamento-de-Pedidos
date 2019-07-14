@@ -25,8 +25,6 @@ export function order(state = initialState, action) {
                 orderstatus: action.orderstatus,
                 orderDescription: action.orderDescription
             };
-        case "USER_UPDATED":
-            return state;
         case "HANDLE_ON_CHANGE":
             return {
                 ...state,
