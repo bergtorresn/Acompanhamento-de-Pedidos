@@ -86,7 +86,7 @@ class Orders extends Component {
                         <div className={classes.toolbar} />
                         <Grid container spacing={24}>
                             <Grid item xs={3}>
-                                <Typography>{'Order'}</Typography>
+                                <Typography>{'PEDIDOS'}</Typography>
                             </Grid>
                             <Grid item xs={6}>
                             </Grid>
@@ -109,6 +109,7 @@ class Orders extends Component {
                                     <TableHead>
                                         <TableRow>
                                             <TableCell>Nome do Cliente</TableCell>
+                                            <TableCell>Status do pedido</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
@@ -117,6 +118,9 @@ class Orders extends Component {
                                                 <TableRow key={n.id}>
                                                     <TableCell component="th" scope="row">
                                                         {n.customerName}
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        {n.orderstatus}
                                                     </TableCell>
                                                 </TableRow>
                                             );
