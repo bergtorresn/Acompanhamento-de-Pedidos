@@ -4,18 +4,28 @@
             "id": 1,
             "customerName": "Bill",
             "customerCPF": 12312312312,
+            "status": 0,
             "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         },
         {
             "id": 2,
             "customerName": "Bill",
             "customerCPF": 12312312312,
+            "status": 1,
             "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         },
         {
             "id": 3,
             "customerName": "Bill",
             "customerCPF": 12312312312,
+            "status": 2,
+            "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        },
+        {
+            "id": 4,
+            "customerName": "Bill",
+            "customerCPF": 12312312312,
+            "status": 3,
             "orderDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }
     ]
