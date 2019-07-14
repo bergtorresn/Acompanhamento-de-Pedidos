@@ -83,7 +83,6 @@ class AllOrders extends Component {
         });
 
         order.map(function (obj) {
-            var count = 0;
             if (obj.orderstatus === 1) {
                 countOrdersInProgress++;
             }

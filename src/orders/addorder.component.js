@@ -65,7 +65,6 @@ class AddOrder extends Component {
     };
     
     handleClick(event){
-        const { match : { params } } = this.props;
         const { dispatch } = this.props;
         let payload={
             customerName: this.props.order.customerName,
